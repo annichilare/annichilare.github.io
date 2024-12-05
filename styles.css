@@ -30,6 +30,11 @@ a {
     padding: 0 20px;
 }
 
+.logo{
+    width: 450px;
+    height: auto;
+}
+
 .home h1 {
     font-size: 3em;
     margin: 0;
@@ -147,7 +152,8 @@ a {
 
 .galeria {
     padding: 80px 20px;
-    background-color: #222;
+    background: linear-gradient(190grad, #111 10%,  #222 10% 90%, #111 90%);
+    
 }
 
 .galeria h2 {
@@ -198,7 +204,35 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (width >= 1920px){
+    .home .btn {
+        font-size: 1.4em;
+        padding: 10px 20px;
+    }
+    #menu ul li a {
+        font-size: 1.4em;
+        text-transform: uppercase;
+        transition: color 0.3s;
+    }
+    .logo{
+        width: 600px;
+    }
+    .mosaico {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Definir columnas */
+        grid-gap: 15px;
+    }
+    .texto{
+        font-size: 1.4em;
+    }
+    .btn-redes{
+        font-size: 1.4em;
+    }
+    .sobre h1{
+        font-size: 2.1em;
+    }
+}
+
+@media (width < 768px) {
     .home h1 {
         font-size: 2em;
     }
@@ -210,5 +244,36 @@ footer {
     .home .btn {
         font-size: 1em;
         padding: 10px 20px;
+    }
+}
+
+@media (width <= 450px) {
+    .home h1 {
+        font-size: 2em;
+    }
+
+    .home p {
+        font-size: 1.2em;
+    }
+
+    .home .btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .logo{
+        width: 240px;
+    }
+
+    #menu ul li a{
+        font-size: 1em;
+    }
+
+    .textoeimagen{
+        display: block;
+    }
+    .portrait{
+        max-width: 100%;
+        height: auto;
     }
 }

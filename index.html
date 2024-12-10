@@ -7,6 +7,7 @@
     <link rel="icon" href="./icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="Script.js" defer></script>
 </head>
 <body>
 
@@ -50,20 +51,23 @@
      <section id="galeria" class="galeria">
         <div class="mosaico">
             <!-- Imagenes de la galería -->
-            <img class="item1" src="./Obras/P1.png" alt="Obra 7">
-            <img class="item2" src="./Obras/R.png" alt="Obra 1">
-            <img class="item3" src="./Obras/C1.png" alt="Obra 2">
-            <img class="item4" src="./Obras/D1.png" alt="Obra 3">
-            <img class="item5" src="./Obras/D2.png" alt="Obra 4">
-	        <img class="item6" src="./Obras/D3.png" alt="Obra 5">
-            <img class="item7" src="./Obras/1.png" alt="Obra 6">
+            <img class="item1" src="./Obras/P1.png" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="item2" src="./Obras/R.png" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="item3 " src="./Obras/C1.png" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="item4 " src="./Obras/D1.png" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="item5 " src="./Obras/D2.png" alt="Imagen 1" onclick="previewImage(this.src)">
+	        <img class="item6 " src="./Obras/D3.png" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="item7 " src="./Obras/1.png" alt="Imagen 1" onclick="previewImage(this.src)">
         </div>
     </section>
+
+    <div id="fullScreenContainer" onclick="closeFullScreen()">
+        <span class="close-btn">&times;</span>
+        <img id="fullScreenImage" src="" alt="Previsualización en Pantalla Completa" />
+    </div>
 
     <footer>
         <p> Venezuela 2024 </p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

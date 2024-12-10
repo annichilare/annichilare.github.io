@@ -1,5 +1,14 @@
 // Script.js
 
+function previewImage(src) {
+    document.getElementById('fullScreenImage').src = src;
+    document.getElementById('fullScreenContainer').style.display = 'flex';
+}
+
+function closeFullScreen() {
+    document.getElementById('fullScreenContainer').style.display = 'none';
+}
+
 // Agregar efecto hover a las imágenes de la galería
 const galleryImages = document.querySelectorAll('.galeria-grid .item img');
 

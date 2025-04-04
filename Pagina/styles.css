@@ -1,0 +1,330 @@
+/* Estilos Generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Share Tech Mono", monospace;
+    background-color: #111;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    text-align: center;
+}
+h3{
+text-align: center;
+font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo para la Página de Inicio */
+.home {
+    background: url('./Obras/cover.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding: 0 20px;
+}
+
+.logo{
+    width: 450px;
+    height: auto;
+}
+
+.home h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.home p {
+    font-size: 1.5em;
+}
+
+.home .btn {
+    background-color: rgba(34,34,34,0.5);
+    color: #FFF;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.home .btn:hover {
+    background-color: rgba(20,20,20,1);
+}
+
+/* Menú de Navegación */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 9px 0;
+    z-index: 10;
+}
+
+#menu ul {
+   
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#menu ul li {
+    margin: 12px 15px;
+}
+
+#menu ul li a {
+    color: #6d6d6d;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+#menu ul li a:hover {
+    color: #fff;
+}
+
+/* Galería */
+.mosaico {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Definir columnas */
+    grid-gap: 10px; /* Espacio entre las imágenes */
+}
+
+.mosaico img {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que las imágenes se recorten bien */
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.mosaico img:hover {
+    transform: scale(1.01);
+}
+
+/* Definimos tamaños específicos para algunas imágenes */
+.item1 {
+    grid-column: span 2; /* Ocupa dos columnas ANCHO */
+    grid-row: span 1; /* Ocupa dos filas ALTO */
+}
+
+.item2 {
+    grid-column: span 1; 
+    grid-row: span 1; 
+}
+
+.item3 {
+    grid-column: span 2; 
+    grid-row: span 1; 
+}
+
+.item4 {
+    grid-column: span 1; 
+    grid-row: span 1; 
+}
+
+.item5 {
+    grid-column: span 2; 
+    grid-row: span 1;
+}
+
+.item6 {
+    grid-column: span 2; 
+    grid-row: span 1; 
+}
+
+.item7 {
+    grid-column: span 2; 
+    grid-row: span 1; 
+}
+
+.item8 {
+    grid-column: span 3; 
+    grid-row: span 1; 
+}
+/*TEXTO*/
+.item9 {
+    grid-column: span 5; 
+    grid-row: span 1; 
+}
+.galeria {
+    padding: 80px 20px;
+    /*background: linear-gradient(190grad, #111 10%,  #222 10% 90%, #111 90%);*/
+    
+}
+
+.galeria h2 {
+    margin-bottom: 40px;
+}
+#fullScreenContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.89);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+#fullScreenImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Sección Sobre Mí */
+.sobre {
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 60px 20px;
+    justify-content: center;
+    text-align: justify;
+}
+.textoeimagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.portrait{
+    max-width: 30%;
+    height: auto;
+    margin-right: 30px;
+}
+.texto{
+    color: #6d6d6d;
+    flex: 1;
+}
+
+.redes-sociales{
+    color: #6d6d6d;
+    margin-top: 4%;
+    text-align: center;
+}
+.btn-redes{
+    margin: 10px;
+}
+.btn-redes:hover{
+    color:#FFF;
+    margin: 10px;
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #6d6d6d;
+}
+
+/* Media Queries 1920*/
+@media (width >= 1920px){
+    .home .btn {
+        font-size: 1.4em;
+        padding: 10px 20px;
+    }
+    #menu ul li a {
+        font-size: 1.4em;
+        text-transform: uppercase;
+        transition: color 0.3s;
+    }
+    .logo{
+        width: 600px;
+    }
+    .mosaico {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Definir columnas */
+        grid-gap: 15px;
+    }
+    .texto{
+        font-size: 1.4em;
+    }
+    .btn-redes{
+        font-size: 1.4em;
+    }
+    .sobre h1{
+        font-size: 2.1em;
+    }
+}
+
+@media (width < 768px) {
+    .home h1 {
+        font-size: 2em;
+    }
+
+    .home p {
+        font-size: 1.2em;
+    }
+
+    .home .btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    .textoeimagen{
+        display: block;
+    }
+    .portrait{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (width <= 450px) {
+    .home h1 {
+        font-size: 2em;
+    }
+
+    .home p {
+        font-size: 1.2em;
+    }
+
+    .home .btn {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .logo{
+        width: 240px;
+    }
+
+    #menu ul li a{
+        font-size: 1em;
+    }
+
+    .textoeimagen{
+        display: block;
+    }
+    .portrait{
+        max-width: 100%;
+        height: auto;
+    }
+}

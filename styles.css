@@ -1,6 +1,7 @@
 /* Estilos Generales */
-body, html {
-    margin: 0;
+body,
+html {
+    /* margin: 0; */
     padding: 0;
     font-family: "Share Tech Mono", monospace;
     background-color: #111;
@@ -8,12 +9,14 @@ body, html {
     scroll-behavior: smooth;
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
 }
-h3{
-text-align: center;
-font-size: 1em;
+
+h3 {
+    text-align: center;
+    font-size: 1em;
 }
 
 a {
@@ -23,7 +26,7 @@ a {
 
 /* Estilo para la Página de Inicio */
 .home {
-    background: url('./Obras/cover.png') no-repeat center center fixed;
+    background: url('./webp/cover.webp') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -34,7 +37,7 @@ a {
     padding: 0 20px;
 }
 
-.logo{
+.logo {
     width: 450px;
     height: auto;
 }
@@ -49,7 +52,7 @@ a {
 }
 
 .home .btn {
-    background-color: rgba(34,34,34,0.5);
+    background-color: rgba(34, 34, 34, 0.5);
     color: #FFF;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -60,7 +63,7 @@ a {
 }
 
 .home .btn:hover {
-    background-color: rgba(20,20,20,1);
+    background-color: rgba(20, 20, 20, 1);
 }
 
 /* Menú de Navegación */
@@ -75,7 +78,7 @@ a {
 }
 
 #menu ul {
-   
+
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -103,76 +106,28 @@ a {
     margin-left: 5%;
     margin-right: 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Definir columnas */
-    grid-gap: 10px; /* Espacio entre las imágenes */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Definir columnas */
+    grid-gap: 10px;
+    /* Espacio entre las imágenes */
 }
 
 .mosaico img {
     cursor: pointer;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que las imágenes se recorten bien */
+    object-fit: cover;
+    /* Asegura que las imágenes se recorten bien */
     border-radius: 8px;
     transition: transform 0.3s;
 }
+
 .mosaico img:hover {
     transform: scale(1.01);
 }
 
-/* Definimos tamaños específicos para algunas imágenes */
-.item1 {
-    grid-column: span 2; /* Ocupa dos columnas ANCHO */
-    grid-row: span 1; /* Ocupa dos filas ALTO */
-}
 
-.item2 {
-    grid-column: span 1; 
-    grid-row: span 1; 
-}
 
-.item3 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-}
-
-.item4 {
-    grid-column: span 1; 
-    grid-row: span 1; 
-}
-
-.item5 {
-    grid-column: span 2; 
-    grid-row: span 1;
-}
-
-.item6 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-}
-
-.item7 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-}
-
-.item8 {
-    grid-column: span 3; 
-    grid-row: span 1; 
-}
-/*TEXTO*/
-.item9 {
-    grid-column: span 5; 
-    grid-row: span 1; 
-}
-.galeria {
-    padding: 80px 20px;
-    /*background: linear-gradient(190grad, #111 10%,  #222 10% 90%, #111 90%);*/
-    
-}
-
-.galeria h2 {
-    margin-bottom: 40px;
-}
 #fullScreenContainer {
     display: none;
     position: fixed;
@@ -185,6 +140,7 @@ a {
     align-items: center;
     z-index: 1000;
 }
+
 #fullScreenImage {
     max-width: 100%;
     max-height: 100%;
@@ -192,7 +148,7 @@ a {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
 }
 
 .close-btn {
@@ -212,33 +168,39 @@ a {
     justify-content: center;
     text-align: justify;
 }
-.textoeimagen{
+
+.textoeimagen {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.portrait{
+
+.portrait {
     max-width: 30%;
     height: auto;
     margin-right: 30px;
 }
-.texto{
+
+.texto {
     color: #6d6d6d;
     flex: 1;
 }
 
-.redes-sociales{
+.redes-sociales {
     color: #6d6d6d;
     margin-top: 4%;
     text-align: center;
 }
-.btn-redes{
+
+.btn-redes {
     margin: 10px;
 }
-.btn-redes:hover{
-    color:#FFF;
+
+.btn-redes:hover {
+    color: #FFF;
     margin: 10px;
 }
+
 /* Footer */
 footer {
     text-align: center;
@@ -248,30 +210,37 @@ footer {
 }
 
 /* Media Queries 1920*/
-@media (width >= 1920px){
+@media (width >=1920px) {
     .home .btn {
         font-size: 1.4em;
         padding: 10px 20px;
     }
+
     #menu ul li a {
         font-size: 1.4em;
         text-transform: uppercase;
         transition: color 0.3s;
     }
-    .logo{
+
+    .logo {
         width: 600px;
     }
+
     .mosaico {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Definir columnas */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        /* Definir columnas */
         grid-gap: 15px;
     }
-    .texto{
+
+    .texto {
         font-size: 1.4em;
     }
-    .btn-redes{
+
+    .btn-redes {
         font-size: 1.4em;
     }
-    .sobre h1{
+
+    .sobre h1 {
         font-size: 2.1em;
     }
 }
@@ -289,16 +258,18 @@ footer {
         font-size: 1em;
         padding: 10px 20px;
     }
-    .textoeimagen{
+
+    .textoeimagen {
         display: block;
     }
-    .portrait{
+
+    .portrait {
         max-width: 100%;
         height: auto;
     }
 }
 
-@media (width <= 450px) {
+@media (width <=450px) {
     .home h1 {
         font-size: 2em;
     }
@@ -312,18 +283,19 @@ footer {
         padding: 10px 20px;
     }
 
-    .logo{
+    .logo {
         width: 240px;
     }
 
-    #menu ul li a{
+    #menu ul li a {
         font-size: 1em;
     }
 
-    .textoeimagen{
+    .textoeimagen {
         display: block;
     }
-    .portrait{
+
+    .portrait {
         max-width: 100%;
         height: auto;
     }

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Exploro estados mentales a través del arte figurativo y abstracto.">
@@ -10,7 +11,7 @@
     <meta property="og:site_name" content="ANNICHILARE" />
     <meta property="og:title" content="Portafolio Artistico" />
     <meta property="og:description" content="Exploro estados mentales a través del arte figurativo y abstracto." />
-    <meta property="og:image" content="https://annichilare.github.io/Obras/1.png" />
+    <meta property="og:image" content="https://annichilare.github.io/webp/1.webp" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:url" content="https://annichilare.github.io/" />
     <meta property="og:type" content="website" />
@@ -18,10 +19,12 @@
     <link rel="icon" href="./icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="Script.js" defer></script>
 </head>
-<body>
 
+<body class="max-w-[1000px] m-auto">
     <!-- Página de Inicio -->
     <section id="home" class="home">
         <div>
@@ -40,45 +43,93 @@
             <li><a href="#sobre">Sobre mí</a></li>
         </ul>
     </nav>
-	<!-- Sección Sobre mí -->
+    <!-- Sección Sobre mí -->
     <section id="sobre" class="sobre">
         <h1>Sobre mí</h1>
         <div class="textoeimagen">
-            <img src="./Obras/R.png" class="portrait">
+            <img src="./webp/R.webp" class="portrait">
             <div class="texto">
-            <p>Mi trabajo artístico se centra en representar los estados mentales humanos, explorando las complejidades y ambigüedades de nuestra mente a través de una fusión entre lo figurativo y lo abstracto, utilizo las técnicas que estén a mi alcance y con las que me sienta cómodo para transmitir mi mensaje, tanto en tradicional como en arte digital.</p>
-            <p>Cada obra surge de un proceso introspectivo, a menudo largo, donde intento capturar la esencia de lo intangible, haciendo tangible lo que solo puede percibirse pensando y analizando nuestros comportamientos. A través de mis obras invito al espectador a reflexionar sobre su propia relación con sus pensamientos y emociones.</p>
-            <p>Mi objetivo es provocar una pausa, una reflexión profunda sobre los estados mentales que todas las personas compartimos, pero que rara vez logramos entender o expresar completamente. Al entrelazar la figuración con lo abstracto, busco abrir un espacio para la interpretación personal, permitiendo que cada espectador se conecte con la obra desde su propia experiencia interna.</p>
+                <p>Mi trabajo artístico se centra en representar los estados mentales humanos, explorando las
+                    complejidades y ambigüedades de nuestra mente a través de una fusión entre lo figurativo y lo
+                    abstracto, utilizo las técnicas que estén a mi alcance y con las que me sienta cómodo para
+                    transmitir mi mensaje, tanto en tradicional como en arte digital.</p>
+                <p>Cada obra surge de un proceso introspectivo, a menudo largo, donde intento capturar la esencia de lo
+                    intangible, haciendo tangible lo que solo puede percibirse pensando y analizando nuestros
+                    comportamientos. A través de mis webp invito al espectador a reflexionar sobre su propia relación
+                    con sus pensamientos y emociones.</p>
+                <p>Mi objetivo es provocar una pausa, una reflexión profunda sobre los estados mentales que todas las
+                    personas compartimos, pero que rara vez logramos entender o expresar completamente. Al entrelazar la
+                    figuración con lo abstracto, busco abrir un espacio para la interpretación personal, permitiendo que
+                    cada espectador se conecte con la obra desde su propia experiencia interna.</p>
             </div>
         </div>
-        
+
         <div class="redes-sociales">
             <a href="https://mastodon.social/@annichilare" target="_blank" class="btn-redes">Mastodon</a>
-            <a href="https://www.instagram.com/annichilare_art" target="_blank" class="btn-redes">Instagram</a>  
+            <a href="https://www.instagram.com/annichilare_art" target="_blank" class="btn-redes">Instagram</a>
         </div>
     </section>
 
-    <!-- Galería de Arte -->
-     <section id="galeria" class="galeria">
-        <div class="mosaico">
-            <!-- Imagenes de la galería -->
-            <div class="item9 "><h1>Tengo 10 segundos para captar tu atención.</h1><h3>(2024 - 2025)</h3></div>
-            <img class="item7 " src="./Obras/1.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item8 " src="./Obras/4.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Estudio sobre la demencia: Alzheimer.</h1><h3>(2024)</h3></div>
-            <img class="item4 " src="./Obras/D1.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item5 " src="./Obras/D2.png" alt="Imagen 1" onclick="previewImage(this.src)">
-	        <img class="item6 " src="./Obras/D3.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Estudio sobre la ira.</h1><h3>(2024)</h3></div>
-            <img class="item8 " src="./Obras/img_po.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item7 " src="./Obras/img_ira.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Pensamiento Profundo.</h1><h3>(2024)</h3></div>
-            <img class="item9 " src="./Obras/deep.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Fumadorxs y varios.</h1><h3>(2023 - 2024)</h3></div>
-            <img class="item1" src="./Obras/P1.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item2" src="./Obras/R.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item3 " src="./Obras/C1.png" alt="Imagen 1" onclick="previewImage(this.src)">
+
+    <section id="galeria" class="flex flex-col gap-10">
+
+        <div class="grid grid-cols-2 w-full  grid-row-5 gap-4">
+            <img class="col-span-2  md:col-span-1   h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/1.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+
+            <img class="col-span-2  md:col-span-1 h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/4.webp" alt="Imagen 1" onclick="previewImage(this.src)">
         </div>
+
+        <div class="w-full">
+            <h1>Estudio sobre la demencia: Alzheimer.</h1>
+            <h3>(2024)</h3>
+        </div>
+
+        <div class="grid grid-cols-3 w-full  grid-row-5 gap-4">
+            <img class="col-span-1 h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/D2.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+
+            <img class="col-span-1 h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/D3.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+
+            <img class="col-span-1 h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/D1.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+
+        </div>
+
+        <div class="grid grid-cols-3 w-full  grid-row-5 gap-4">
+            <img class="col-span-1 h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/img_ira.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+
+            <img class="col-span-2 h-full object-cover hover:scale-101 transition-transform duration-300 "
+                src="./webp/img_po.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+        </div>
+
+
+        <div class="w-full">
+            <h1>Pensamiento Profundo.</h1>
+            <h3>(2024)</h3>
+        </div>
+
+        <div class="flex items-center aspect-auto justify-center">
+            <img class="item9 " src="./webp/deep.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+        </div>
+
+        <div class="w-full">
+            <h1>Fumadorxs y varios.</h1>
+            <h3>(2023 - 2024)</h3>
+        </div>
+
+        <div class="grid grid-cols-5 w-full  grid-row-5 ">
+            <img class="col-span-2 h-full object-cover hover:scale-101 transition-transform duration-300"
+                src="./webp/P1.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="col-span-1 h-full object-cover hover:scale-101 transition-transform duration-300"
+                src="./webp/R.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img class="col-span-2 h-full object-cover hover:scale-101 transition-transform duration-300"
+                src="./webp/C1.webp" alt="Imagen 1" onclick="previewImage(this.src)">
+        </div>
+
     </section>
 
     <div id="fullScreenContainer" onclick="closeFullScreen()">
@@ -90,4 +141,5 @@
         <p> Venezuela 2025 </p>
     </footer>
 </body>
+
 </html>

@@ -3,19 +3,20 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: "Share Tech Mono", monospace;
-    background-color: #111;
+    background-color: #0a0a0a;
     color: white;
     scroll-behavior: smooth;
 }
-
+img{
+    user-select: none;
+}
 h1, h2 {
     text-align: center;
 }
 h3{
-text-align: center;
-font-size: 1em;
+    text-align: center;
+    font-size: 1em;
 }
-
 a {
     text-decoration: none;
     color: inherit;
@@ -60,7 +61,7 @@ a {
 }
 
 .home .btn:hover {
-    background-color: rgba(20,20,20,1);
+    background-color: #0a0a0a;
 }
 
 /* Menú de Navegación */
@@ -69,8 +70,8 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #111;
-    padding: 9px 0;
+    background-color: #0a0a0a;
+    padding: 4px 0;
     z-index: 10;
 }
 
@@ -94,85 +95,101 @@ a {
     transition: color 0.3s;
 }
 
+#menu ul li a.active {
+    color: #fff !important;
+}
+
 #menu ul li a:hover {
     color: #fff;
 }
-
-/* Galería */
-.mosaico {
-    margin-left: 5%;
-    margin-right: 5%;
+ /*Mosaico*/
+.contenedor-principal {
+    margin: 0 8%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Definir columnas */
-    grid-gap: 10px; /* Espacio entre las imágenes */
+    grid-template-columns: 1fr 0.5fr;
+    gap: 4%;
+    padding: 50px 20px;
+    align-items: start;
+}
+
+.mosaico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    grid-auto-rows: minmax(200px, auto);
 }
 
 .mosaico img {
-    cursor: pointer;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que las imágenes se recorten bien */
+    object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
+
+.mosaico img.destacada {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
 .mosaico img:hover {
     transform: scale(1.01);
 }
 
-/* Definimos tamaños específicos para algunas imágenes */
-.item1 {
-    grid-column: span 2; /* Ocupa dos columnas ANCHO */
-    grid-row: span 1; /* Ocupa dos filas ALTO */
+.seccion-texto {
+    flex: 1 1 20%;
+    min-width: 300px;
+    padding: 20px;
+    justify-content: center;
+    text-align: justify;
 }
 
-.item2 {
-    grid-column: span 1; 
-    grid-row: span 1; 
-}
 
-.item3 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-}
-
-.item4 {
-    grid-column: span 1; 
-    grid-row: span 1; 
-}
-
-.item5 {
-    grid-column: span 2; 
-    grid-row: span 1;
-}
-
-.item6 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-}
-
-.item7 {
-    grid-column: span 2; 
-    grid-row: span 1; 
-}
-
-.item8 {
-    grid-column: span 3; 
-    grid-row: span 1; 
-}
-/*TEXTO*/
-.item9 {
-    grid-column: span 5; 
-    grid-row: span 1; 
-}
-.galeria {
-    padding: 80px 20px;
-    /*background: linear-gradient(190grad, #111 10%,  #222 10% 90%, #111 90%);*/
+/* Mobile First Approach */
+@media (max-width: 1100px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+        margin: 0 5%;
+    }
     
+    .mosaico {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(120px, auto);
+        width: 100%;
+    }
+    
+    .mosaico img {
+        aspect-ratio: 1;
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    
+    .seccion-texto {
+        margin: auto 0;
+    }
 }
 
-.galeria h2 {
-    margin-bottom: 40px;
+@media (max-width: 480px) {
+    .mosaico {
+        margin: auto 0;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(120px, auto);
+    }
+    
+    .mosaico img {
+        aspect-ratio: 16/9;
+    }
+    
+    .texto-contenido h2 {
+        font-size: 1.5rem;
+    }
 }
+
+
+@media (max-width: 768px) {
+}
+
 #fullScreenContainer {
     display: none;
     position: fixed;
@@ -243,7 +260,7 @@ a {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #111;
+    background-color: #0a0a0a;
     color: #6d6d6d;
 }
 
@@ -260,10 +277,6 @@ footer {
     }
     .logo{
         width: 600px;
-    }
-    .mosaico {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Definir columnas */
-        grid-gap: 15px;
     }
     .texto{
         font-size: 1.4em;
@@ -298,7 +311,7 @@ footer {
     }
 }
 
-@media (width <= 450px) {
+@media (width < 450px) {
     .home h1 {
         font-size: 2em;
     }

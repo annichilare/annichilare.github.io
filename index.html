@@ -10,7 +10,7 @@
     <meta property="og:site_name" content="ANNICHILARE" />
     <meta property="og:title" content="Portafolio Artistico" />
     <meta property="og:description" content="Exploro estados mentales a través del arte figurativo y abstracto." />
-    <meta property="og:image" content="https://annichilare.github.io/Obras/1.png" />
+    <meta property="og:image" content="./Obras/1.png" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:url" content="https://annichilare.github.io/" />
     <meta property="og:type" content="website" />
@@ -21,7 +21,14 @@
     <script src="Script.js" defer></script>
 </head>
 <body>
-
+    <!-- Menú de Navegación -->
+       <nav id="menu">
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#sobre">Sobre mí</a></li>
+        </ul>
+    </nav>
     <!-- Página de Inicio -->
     <section id="home" class="home">
         <div>
@@ -31,18 +38,113 @@
             <a href="#galeria" class="btn">Ver Obras</a>
         </div>
     </section>
+        <!-- Mosaico -->
+    <section id="galeria">
+    <div class="contenedor-principal">
+        <div class="mosaico">
+            <img src="./Obras/10seg/1.png" class="item1" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img src="./Obras/10seg/4.png" class="item2" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/10seg/b1.png" class="item3" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/10seg/a2.png" class="item4" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/10seg/b2.png" class="item5" alt="Imagen 2" onclick="previewImage(this.src)">
+        </div>
 
-    <!-- Menú de Navegación -->
-    <nav id="menu">
-        <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#sobre">Sobre mí</a></li>
-        </ul>
-    </nav>
+        <div class="seccion-texto">
+            <div class="texto-contenido">
+                <h2>Tengo 10 segundos para captar tu atención (2024 - 2025)</h2>
+                <div class="texto">
+                <p>Reflexión y análisis de una realidad paralela con la que interactuamos a través de las pantallas.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="contenedor-principal">
+        <div class="mosaico">
+            <img src="./Obras/Dem/D1.png" class="item1" onclick="previewImage(this.src)">
+            <img src="./Obras/Dem/D2.png" class="item3" onclick="previewImage(this.src)">
+            <img src="./Obras/Dem/D3.png" class="item5" onclick="previewImage(this.src)">
+            <img src="./Obras/Dem/1.png" class="item2" onclick="previewImage(this.src)">
+            <img src="./Obras/Dem/2.png" class="item4" onclick="previewImage(this.src)">
+            <img src="./Obras/Dem/3.png" class="item6" onclick="previewImage(this.src)">
+        </div>
+
+        <div class="seccion-texto">
+            <div class="texto-contenido">
+                <h2>Estudio sobre la demencia: Alzheimer (2024)</h2>
+                <div class="texto">
+                <p>Intento representar de forma figurativa las etapas del alzheimer, la enfermedad avanza de forma silenciosa mucho antes que los síntomas sean evidentes, esta etapa (presintomática) puede durar años…</p>
+                <br>
+                <p>La enfermedad no tiene cura.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="contenedor-principal">
+        <div class="mosaico">
+            <img src="./Obras/ira/1.JPG" class="item1" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img src="./Obras/ira/4.jpg" class="item4" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/ira/img_ira.png" class="item5" alt="Imagen 2" onclick="previewImage(this.src)">
+        </div>
+
+        <div class="seccion-texto">
+            <div class="texto-contenido">
+                <h2>Estudio sobre la Ira (2024)</h2>
+                <div class="texto">
+                <p>Mi corazón explota,</p>
+                <p>mis pulmones no tienen oxígeno,</p>
+                <p>olvidé mi lenguaje,</p>
+                <p>arriba hay un tornado eléctrico</p>
+                <p>que contiene químicos.</p>
+                <br>
+                <p>El tornado pasó,</p>
+                <p>se llevó todo</p>
+                <p>y me fuí con él.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="contenedor-principal">
+        <div class="mosaico">
+            <img src="./Obras/fumadorxs/C1.png" class="item1" alt="Imagen 1" onclick="previewImage(this.src)">
+            <img src="./Obras/fumadorxs/1.png" class="item2" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/fumadorxs/2.png" class="item3" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/fumadorxs/3.png" class="item4" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/fumadorxs/4.png" class="item5" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/fumadorxs/5.png" class="item5" alt="Imagen 2" onclick="previewImage(this.src)">
+        
+        </div>
+
+        <div class="seccion-texto">
+            <div class="texto-contenido">
+                <h2>Fumadorxs (2024)</h2>
+                <div class="texto">
+                <p>Analisis sobre la sexualidad y prostitución.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="contenedor-principal">
+        <div class="mosaico">
+            <img src="./Obras/deep/1.png" class="item5" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/deep/2.png" class="item4" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/deep/4.png" class="item3" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/deep/5.png" class="item2" alt="Imagen 2" onclick="previewImage(this.src)">
+            <img src="./Obras/deep/deep.png" class="item1" alt="Imagen 1" onclick="previewImage(this.src)">
+        </div>
+
+        <div class="seccion-texto">
+            <div class="texto-contenido">
+                <h2>Pensamiento Profundo (2024)</h2>
+                <div class="texto">
+                <p>Representación del estado mental a traves de las pantallas, internet.</p>
+                </div>
+                </div>
+        </div>
+    </div>
+</section>
 	<!-- Sección Sobre mí -->
     <section id="sobre" class="sobre">
-        <h1>Sobre mí</h1>
+        <h1>¿Quién soy?</h1>
         <div class="textoeimagen">
             <img src="./Obras/R.png" class="portrait">
             <div class="texto">
@@ -51,33 +153,9 @@
             <p>Mi objetivo es provocar una pausa, una reflexión profunda sobre los estados mentales que todas las personas compartimos, pero que rara vez logramos entender o expresar completamente. Al entrelazar la figuración con lo abstracto, busco abrir un espacio para la interpretación personal, permitiendo que cada espectador se conecte con la obra desde su propia experiencia interna.</p>
             </div>
         </div>
-        
         <div class="redes-sociales">
             <a href="https://mastodon.social/@annichilare" target="_blank" class="btn-redes">Mastodon</a>
-            <a href="https://www.instagram.com/annichilare_art" target="_blank" class="btn-redes">Instagram</a>  
-        </div>
-    </section>
-
-    <!-- Galería de Arte -->
-     <section id="galeria" class="galeria">
-        <div class="mosaico">
-            <!-- Imagenes de la galería -->
-            <div class="item9 "><h1>Tengo 10 segundos para captar tu atención.</h1><h3>(2024 - 2025)</h3></div>
-            <img class="item7 " src="./Obras/1.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item8 " src="./Obras/4.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Estudio sobre la demencia: Alzheimer.</h1><h3>(2024)</h3></div>
-            <img class="item4 " src="./Obras/D1.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item5 " src="./Obras/D2.png" alt="Imagen 1" onclick="previewImage(this.src)">
-	        <img class="item6 " src="./Obras/D3.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Estudio sobre la ira.</h1><h3>(2024)</h3></div>
-            <img class="item8 " src="./Obras/img_po.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item7 " src="./Obras/img_ira.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Pensamiento Profundo.</h1><h3>(2024)</h3></div>
-            <img class="item9 " src="./Obras/deep.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <div class="item9 "><h1>Fumadorxs y varios.</h1><h3>(2023 - 2024)</h3></div>
-            <img class="item1" src="./Obras/P1.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item2" src="./Obras/R.png" alt="Imagen 1" onclick="previewImage(this.src)">
-            <img class="item3 " src="./Obras/C1.png" alt="Imagen 1" onclick="previewImage(this.src)">
+            <a href="https://www.instagram.com/annichilare" target="_blank" class="btn-redes">Instagram</a>  
         </div>
     </section>
 
@@ -85,9 +163,9 @@
         <span class="close-btn">&times;</span>
         <img id="fullScreenImage" src="" alt="Previsualización en Pantalla Completa" />
     </div>
-
     <footer>
-        <p> Venezuela 2025 </p>
+        <p>"Lo que más abunda, hasta el punto de que ya no causa sorpresa, son personas sufriendo con paciencia el minucioso escrutinio de la soledad."</p>
+        <p>(José Saramago, El hombre duplicado)</p>
     </footer>
 </body>
 </html>

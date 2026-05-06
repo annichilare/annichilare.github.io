@@ -4,7 +4,8 @@ body, html {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: "Lato";
+    font-family: "Inter";
+    font-style: normal;
     background-color: #0a0a0a;
     color: white;
     scroll-behavior: smooth;

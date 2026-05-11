@@ -1,67 +1,94 @@
-// Script.js
-
+// ===========================
+// VISOR DE IMAGEN FULLSCREEN
+// ===========================
 function previewImage(src) {
-    document.getElementById('fullScreenImage').src = src;
-    document.getElementById('fullScreenContainer').style.display = 'flex';
+    const container = document.getElementById('fullScreenContainer');
+    const image = document.getElementById('fullScreenImage');
+    image.src = src;
+    container.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
 function closeFullScreen() {
-    document.getElementById('fullScreenContainer').style.display = 'none';
+    const container = document.getElementById('fullScreenContainer');
+    container.style.display = 'none';
+    document.body.style.overflow = '';
 }
 
-// Agregar efecto hover a las imágenes de la galería
-const galleryImages = document.querySelectorAll('.galeria-grid .item img');
-
-galleryImages.forEach(image => {
-    image.addEventListener('mouseenter', () => {
-        image.style.transform = "scale(1.1)";
-    });
-    image.addEventListener('mouseleave', () => {
-        image.style.transform = "scale(1)";
-    });
+// Cerrar con tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeFullScreen();
+        closeObraViewer();
+    }
 });
 
+// ===========================
+// VISOR DE OBRA CON INFORMACIÓN
+// ===========================
+function openObraViewer(imgElement) {
+    const viewer = document.getElementById('obraViewer');
+    const obraImagen = document.getElementById('obraImagen');
+    const obraTitulo = document.getElementById('obraTitulo');
+    const obraYear = document.getElementById('obraYear');
+    const obraTechnique = document.getElementById('obraTechnique');
+    const obraDescripcion = document.getElementById('obraDescripcion');
 
-// Optimizar el destacado aleatorio
-function destacarAleatoria() {
-    const mosaicos = document.querySelectorAll('.mosaico');
-    
-    mosaicos.forEach(mosaico => {
-        const imagenes = mosaico.querySelectorAll('img');
-        if(imagenes.length < 1) return;
-        
-        imagenes.forEach(img => img.classList.remove('destacada'));
-        const indice = Math.floor(Math.random() * imagenes.length);
-        imagenes[indice].classList.add('destacada');
-        
-        // Forzar reflow solo si es necesario
-        if(window.innerWidth > 768) {
-            mosaico.style.display = 'none';
-            void mosaico.offsetWidth;
-            mosaico.style.display = 'grid';
-        }
+    // Obtener datos de la imagen
+    const src = imgElement.src;
+    const title = imgElement.dataset.title || 'Sin título';
+    const info = imgElement.dataset.info || '';
+    const year = imgElement.dataset.year || '—';
+    const technique = imgElement.dataset.technique || '—';
+
+    obraImagen.src = src;
+    obraTitulo.textContent = title;
+    obraYear.textContent = year;
+    obraTechnique.textContent = technique;
+    obraDescripcion.textContent = info;
+
+    viewer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeObraViewer() {
+    const viewer = document.getElementById('obraViewer');
+    viewer.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Inicializar clics en la galería
+function initGaleriaClicks() {
+    const galeriaItems = document.querySelectorAll('.galeria-item img');
+    galeriaItems.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openObraViewer(img);
+        });
     });
 }
 
-// Debounce para el resize
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(destacarAleatoria, 250);
+// Cerrar viewer al hacer clic en overlay
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.querySelector('.obra-viewer-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeObraViewer);
+    }
+    initGaleriaClicks();
 });
 
-// Ejecutar al cargar y al recargar
-window.addEventListener('load', destacarAleatoria);
-window.addEventListener('resize', destacarAleatoria);
-
-//ACTIVAR
-document.addEventListener('DOMContentLoaded', function() {
+// ===========================
+// SCROLL SPY PARA MENÚ ACTIVO
+// ===========================
+function initScrollSpy() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('#menu ul li a');
 
+    if (sections.length === 0 || navLinks.length === 0) return;
+
     const observerOptions = {
-        threshold: 0.2, // Reducir threshold para mayor sensibilidad
-        rootMargin: '0px 0px -25% 0px' // Ignorar 25% inferior de la pantalla
+        threshold: 0.2,
+        rootMargin: '0px 0px -25% 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -84,8 +111,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, observerOptions);
 
-    // Observar todas las secciones
     sections.forEach(section => {
         observer.observe(section);
     });
+}
+
+// ===========================
+// EFECTO GLITCH ALEATORIO INTENSIFICADO
+// ===========================
+function randomGlitchIntensify() {
+    const glitchElement = document.querySelector('.glitch');
+    if (!glitchElement) return;
+    
+    glitchElement.style.animation = 'none';
+    glitchElement.offsetHeight;
+    glitchElement.style.textShadow = '2px 0 rgba(10,26,10,0.7), -2px 0 rgba(26,10,10,0.7)';
+    
+    setTimeout(() => {
+        glitchElement.style.textShadow = 'none';
+    }, 150);
+}
+
+function scheduleRandomGlitch() {
+    const delay = 5000 + Math.random() * 10000;
+    setTimeout(() => {
+        randomGlitchIntensify();
+        scheduleRandomGlitch();
+    }, delay);
+}
+
+// ===========================
+// INICIALIZACIÓN
+// ===========================
+document.addEventListener('DOMContentLoaded', () => {
+    initGaleriaClicks();
+    initScrollSpy();
+    
+    if (window.innerWidth > 768) {
+        scheduleRandomGlitch();
+    }
+});
+
+// Re-scan por si hay carga dinámica
+window.addEventListener('load', () => {
+    initGaleriaClicks();
 });

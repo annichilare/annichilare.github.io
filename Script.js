@@ -83,39 +83,39 @@ document.addEventListener('DOMContentLoaded', () => {
 function initScrollSpy() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('#menu ul li a');
-
     if (sections.length === 0 || navLinks.length === 0) return;
 
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -25% 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        let mostVisibleEntry = null;
-        
-        entries.forEach(entry => {
-            if (!mostVisibleEntry || entry.intersectionRatio > mostVisibleEntry.intersectionRatio) {
-                mostVisibleEntry = entry;
+    function updateActiveLink() {
+        let currentSectionId = '';
+        const scrollPos = window.scrollY + 100; // offset para considerar la altura del menú
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
             }
         });
-    
-        if (mostVisibleEntry && mostVisibleEntry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            const correspondingLink = document.querySelector(
-                `#menu ul li a[href="#${mostVisibleEntry.target.id}"]`
-            );
-            if (correspondingLink) {
-                correspondingLink.classList.add('active');
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
             }
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        // throttle simple
+        if (!window.requestIdleCallback) {
+            updateActiveLink();
+        } else {
+            if (window.scrollTimeout) cancelIdleCallback(window.scrollTimeout);
+            window.scrollTimeout = requestIdleCallback(updateActiveLink);
         }
-    }, observerOptions);
-
-    sections.forEach(section => {
-        observer.observe(section);
     });
+    updateActiveLink(); // ejecutar al cargar
 }
-
 // ===========================
 // EFECTO GLITCH ALEATORIO INTENSIFICADO
 // ===========================

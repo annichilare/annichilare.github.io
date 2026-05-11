@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Exploro estados mentales a través del arte figurativo y abstracto.">
     <meta name="keywords" content="arte, estados mentales, figurativo, abstracto, introspección">
     <title>ANNICHILARE</title>
     <meta property="og:site_name" content="ANNICHILARE" />
-    <meta property="og:title" content="Portafolio Artistico" />
+    <meta property="og:title" content="Portafolio Artístico" />
     <meta property="og:description" content="Exploro estados mentales a través del arte figurativo y abstracto." />
     <meta property="og:image" content="./Obras/Dem/3.png" />
     <meta property="og:image:width" content="1920" />
@@ -18,51 +17,130 @@
     <link rel="icon" href="./icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script src="Script.js" defer></script>
 </head>
 <body>
-    <!-- Menú de Navegación -->
-       <nav id="menu">
+    <div class="scanlines"></div>
+
+    <nav id="menu">
         <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#sobre">Sobre mí</a></li>
+            <li><a href="#home" class="nav-item">[Inicio]</a></li>
+            <li><a href="#sobre" class="nav-item">[Sobre mí]</a></li>
+            <li><a href="#galeria" class="nav-item">[Galería]</a></li>
         </ul>
     </nav>
-    <!-- Página de Inicio -->
+
     <section id="home" class="home">
-        <div>
-            <br>
-            <img class="logo" src="./path.svg">
-            <p></p>
+        <div class="home-content">
+            <img class="logo" src="./path.svg" alt="ANNICHILARE">
+            <p class="terminal-prompt">> annichilare@_:~$ sudo</p>
         </div>
+        <div class="scroll-indicator">[scroll]</div>
     </section>
-	<!-- Sección Sobre mí -->
+
     <section id="sobre" class="sobre">
-        <h1>¿Quién soy?</h1>
+        <h2 class="section-title">> ¿Quién soy?_</h2>
         <div class="textoeimagen">
-            <img src="./Obras/R.png" class="portrait">
+            <div class="portrait-container">
+                <img src="./Obras/R.png" class="portrait" alt="Retrato del artista">
+            </div>
             <div class="texto">
-            <p>Mi trabajo artístico se centra en representar los estados mentales humanos, explorando las complejidades y ambigüedades de nuestra mente a través de una fusión entre lo figurativo y lo abstracto, utilizo las técnicas que estén a mi alcance y con las que me sienta cómodo para transmitir mi mensaje, tanto en tradicional como en arte digital.</p>
-            <p>Cada obra surge de un proceso introspectivo, a menudo largo, donde intento capturar la esencia de lo intangible, haciendo tangible lo que solo puede percibirse pensando y analizando nuestros comportamientos. A través de mis obras invito al espectador a reflexionar sobre su propia relación con sus pensamientos y emociones.</p>
-            <p>Mi objetivo es provocar una pausa, una reflexión profunda sobre los estados mentales que todas las personas compartimos, pero que rara vez logramos entender o expresar completamente. Al entrelazar la figuración con lo abstracto, busco abrir un espacio para la interpretación personal, permitiendo que cada espectador se conecte con la obra desde su propia experiencia interna.</p>
+                <p>Mi trabajo artístico se centra en representar los estados mentales humanos, explorando las complejidades y ambigüedades de nuestra mente a través de una fusión entre lo figurativo y lo abstracto. Utilizo las técnicas que estén a mi alcance y con las que me sienta cómodo para transmitir mi mensaje, tanto en tradicional como en arte digital.</p>
+                <p>Cada obra surge de un proceso introspectivo, a menudo largo, donde intento capturar la esencia de lo intangible, haciendo tangible lo que solo puede percibirse pensando y analizando nuestros comportamientos. A través de mis obras invito al espectador a reflexionar sobre su propia relación con sus pensamientos y emociones.</p>
+                <p>Mi objetivo es provocar una pausa, una reflexión profunda sobre los estados mentales que todas las personas compartimos, pero que rara vez logramos entender o expresar completamente. Al entrelazar la figuración con lo abstracto, busco abrir un espacio para la interpretación personal, permitiendo que cada espectador se conecte con la obra desde su propia experiencia interna.</p>
             </div>
         </div>
         <div class="redes-sociales">
-            <a href="https://mastodon.social/@annichilare" target="_blank" class="btn-redes">Mastodon</a>
-            <a href="https://www.instagram.com/annichilare" target="_blank" class="btn-redes">Instagram</a>
-            <a href="Obras/RasecDepablos_portfolio.pdf" target="_blank" class="btn-redes">Portfolio</a>
+            <a href="https://mastodon.social/@annichilare" target="_blank" class="btn-redes">> Mastodon</a>
+            <a href="https://www.instagram.com/annichilare" target="_blank" class="btn-redes">> Instagram</a>
+            <a href="Obras/RasecDepablos_portfolio.pdf" target="_blank" class="btn-redes">> Portfolio.pdf</a>
         </div>
     </section>
 
-    <div id="fullScreenContainer" onclick="closeFullScreen()">
-        <span class="close-btn">&times;</span>
-        <img id="fullScreenImage" src="" alt="Previsualización en Pantalla Completa" />
+    <!-- NUEVA SECCIÓN GALERÍA -->
+    <section id="galeria" class="galeria">
+        <h2 class="section-title">> Galería_</h2>
+        <div class="galeria-grid">
+            <!-- Cada imagen debe tener data-title, data-info, data-year, data-technique -->
+            <div class="galeria-item">
+                <img src="./Obras/Dem/1.png" alt="Obra 1" 
+                     data-title="Demencia I" 
+                     data-info="Exploración del deterioro cognitivo a través de manchas y líneas disruptivas." 
+                     data-year="2024" 
+                     data-technique="Digital / Mixta">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/2.png" alt="Obra 2" 
+                     data-title="Demencia II" 
+                     data-info="Figura fragmentada que representa la pérdida de identidad." 
+                     data-year="2024" 
+                     data-technique="Digital">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/3.png" alt="Obra 3" 
+                     data-title="Introspección" 
+                     data-info="Mirada interior hacia los estados de ansiedad latente." 
+                     data-year="2023" 
+                     data-technique="Acrílico sobre lienzo">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/4.png" alt="Obra 4" 
+                     data-title="Ruido mental" 
+                     data-info="Saturación abstracta de pensamientos simultáneos." 
+                     data-year="2023" 
+                     data-technique="Digital">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/1.png" alt="Obra 5" 
+                     data-title="Soledad acompañada" 
+                     data-info="Contrastes entre vacío y presencia." 
+                     data-year="2024" 
+                     data-technique="Mixta sobre papel">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/2.png" alt="Obra 6" 
+                     data-title="Fragmentos" 
+                     data-info="Lo figurativo se descompone en planos temporales." 
+                     data-year="2023" 
+                     data-technique="Digital">
+            </div>
+        </div>
+    </section>
+
+    <!-- VISOR DE OBRA CON INFORMACIÓN -->
+    <div id="obraViewer" class="obra-viewer">
+        <div class="obra-viewer-overlay" onclick="closeObraViewer()"></div>
+        <div class="obra-viewer-content">
+            <span class="close-btn" onclick="closeObraViewer()">[X]</span>
+            <div class="obra-viewer-layout">
+                <div class="obra-imagen-container">
+                    <img id="obraImagen" src="" alt="Obra ampliada">
+                </div>
+                <div class="obra-info">
+                    <h3 id="obraTitulo" class="obra-titulo"></h3>
+                    <div class="obra-meta">
+                        <p><span class="meta-label">Año:</span> <span id="obraYear"></span></p>
+                        <p><span class="meta-label">Técnica:</span> <span id="obraTechnique"></span></p>
+                    </div>
+                    <p id="obraDescripcion" class="obra-descripcion"></p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Visor fullscreen antiguo (para el portrait o cualquier otra imagen) -->
+    <div id="fullScreenContainer" onclick="closeFullScreen()">
+        <span class="close-btn">[X]</span>
+        <img id="fullScreenImage" src="" alt="Previsualización en Pantalla Completa">
+    </div>
+
     <footer>
-        <p class="footertext">"Lo que más abunda, hasta el punto de que ya no causa sorpresa, son personas sufriendo con paciencia el minucioso escrutinio de la soledad."</p>
-        <p class="footertext">(José Saramago, El hombre duplicado)</p>
+        <div class="footer-block">
+            <p class="footertext">"Lo que más abunda, hasta el punto de que ya no causa sorpresa, son personas sufriendo con paciencia el minucioso escrutinio de la soledad."</p>
+            <p class="footertext footer-author">— José Saramago, El hombre duplicado</p>
+        </div>
     </footer>
 </body>
 </html>

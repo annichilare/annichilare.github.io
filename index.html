@@ -12,8 +12,10 @@
     <meta property="og:image" content="./Obras/Dem/3.png" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:url" content="https://annichilare.github.io/" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="website" />  
 
+    <link rel="preload" href="./path.svg" as="image" type="image/svg+xml">
+    <link rel="canonical" href="https://annichilare.github.io/" />
     <link rel="icon" href="./icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,153 +24,117 @@
     <script src="Script.js" defer></script>
 </head>
 <body>
+    <div class="scanlines"></div>
+
     <nav id="menu">
         <ul>
-            <li><a href="#home" class="nav-item">Inicio</a></li>
-            <li><a href="#sobre" class="nav-item">Sobre mí</a></li>
-            <li><a href="#galeria" class="nav-item">Galería</a></li>
+            <li><a href="#home" class="nav-item">[Inicio]</a></li>
+            <li><a href="#sobre" class="nav-item">[Sobre mí]</a></li>
+            <li><a href="#galeria" class="nav-item">[Galería]</a></li>
         </ul>
     </nav>
 
     <section id="home" class="home">
         <div class="home-content">
-            <img class="logo" src="./path.svg" alt="ANNICHILARE">
-            <p class="tagline">Artista plástico · Figurativo y abstracto</p>
+            <!-- Logo: carga prioritaria, es lo primero que se ve -->
+            <img class="logo" src="./path.svg" alt="ANNICHILARE" 
+                 fetchpriority="high" 
+                 decoding="async">
+            <p class="terminal-prompt">> annichilare@_:~$ sudo</p>
         </div>
+        <div class="scroll-indicator">[scroll]</div>
     </section>
 
     <section id="sobre" class="sobre">
-        <h2 class="section-title">Sobre mí</h2>
+        <h2 class="section-title">> ¿Quién soy?_</h2>
         <div class="textoeimagen">
             <div class="portrait-container">
-                <img src="./Obras/R.png" class="portrait" alt="Retrato del artista">
+                <!-- Retrato: carga prioritaria (está cerca del inicio) -->
+                <img src="./Obras/R.png" class="portrait" alt="Retrato del artista"
+                     decoding="async">
             </div>
             <div class="texto">
                 <p>Mi trabajo artístico se centra en representar los estados mentales humanos, explorando las complejidades y ambigüedades de nuestra mente a través de una fusión entre lo figurativo y lo abstracto. Utilizo las técnicas que estén a mi alcance y con las que me sienta cómodo para transmitir mi mensaje, tanto en tradicional como en arte digital.</p>
                 <p>Cada obra surge de un proceso introspectivo, a menudo largo, donde intento capturar la esencia de lo intangible, haciendo tangible lo que solo puede percibirse pensando y analizando nuestros comportamientos. A través de mis obras invito al espectador a reflexionar sobre su propia relación con sus pensamientos y emociones.</p>
+                <p>Mi objetivo es provocar una pausa, una reflexión profunda sobre los estados mentales que todas las personas compartimos, pero que rara vez logramos entender o expresar completamente. Al entrelazar la figuración con lo abstracto, busco abrir un espacio para la interpretación personal, permitiendo que cada espectador se conecte con la obra desde su propia experiencia interna.</p>
             </div>
         </div>
         <div class="redes-sociales">
-            <a href="https://mastodon.social/@annichilare" target="_blank" class="btn-redes">Mastodon</a>
-            <a href="https://www.instagram.com/annichilare" target="_blank" class="btn-redes">Instagram</a>
-            <a href="Obras/RasecDepablos_portfolio.pdf" target="_blank" class="btn-redes">Portfolio PDF</a>
+            <a href="https://mastodon.social/@annichilare" target="_blank" class="btn-redes">> Mastodon</a>
+            <a href="https://www.instagram.com/annichilare" target="_blank" class="btn-redes">> Instagram</a>
+            <a href="Obras/RasecDepablos_portfolio.pdf" target="_blank" class="btn-redes">> Portfolio.pdf</a>
         </div>
     </section>
 
-   <!-- SECCIÓN GALERÍA -->
-<section id="galeria" class="galeria">
-    <h2 class="section-title">Galería</h2>
-    <div class="galeria-grid">
-
-        <!-- Obra estrella, ocupa todo el ancho -->
-        <div class="galeria-item galeria-item--xl">
-            <img src="./Obras/10seg/1.png" alt="Obra 1" 
-                 data-title="Tengo 10 segundos para captar tu atención: Mírame, consúmeme." 
-                 data-info="Exploración del deterioro cognitivo a través de manchas y líneas disruptivas." 
-                 data-year="2025" 
-                 data-technique="Digital">
+    <!-- GALERÍA: imágenes con lazy loading -->
+    <section id="galeria" class="galeria">
+        <h2 class="section-title">> Galería_</h2>
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="./Obras/10seg/1.png" alt="Obra 1" 
+                     loading="lazy" decoding="async"
+                     data-title="" 
+                     data-info="Exploración del deterioro cognitivo a través de manchas y líneas disruptivas." 
+                     data-year="2025" 
+                     data-technique="Digital">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/10seg/4.png" alt="Obra 2" 
+                     loading="lazy" decoding="async"
+                     data-title="Demencia II" 
+                     data-info="Figura fragmentada que representa la pérdida de identidad." 
+                     data-year="2025" 
+                     data-technique="Digital">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/D1.png" alt="Obra 3" 
+                     loading="lazy" decoding="async"
+                     data-title="Introspección" 
+                     data-info="Mirada interior hacia los estados de ansiedad latente." 
+                     data-year="2023" 
+                     data-technique="Acrílico sobre lienzo">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/D2.png" alt="Obra 4" 
+                     loading="lazy" decoding="async"
+                     data-title="Ruido mental" 
+                     data-info="Saturación abstracta de pensamientos simultáneos." 
+                     data-year="2023" 
+                     data-technique="Digital">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/Dem/D3.png" alt="Obra 5" 
+                     loading="lazy" decoding="async"
+                     data-title="Soledad acompañada" 
+                     data-info="Contrastes entre vacío y presencia." 
+                     data-year="2024" 
+                     data-technique="Mixta sobre papel">
+            </div>
+            <div class="galeria-item">
+                <img src="./Obras/fumadorxs/C1.png" alt="Obra 6" 
+                     loading="lazy" decoding="async"
+                     data-title="Fragmentos" 
+                     data-info="Lo figurativo se descompone en planos temporales." 
+                     data-year="2023" 
+                     data-technique="Digital">
+            </div>
         </div>
+    </section>
 
-        <div class="galeria-item">
-            <img src="./Obras/10seg/4.png" alt="Obra 2" 
-                 data-title="Tengo 10 segundos para captar tu atención: Realmente, ¿Eres real?." 
-                 data-info="Figura fragmentada que representa la pérdida de identidad." 
-                 data-year="2025" 
-                 data-technique="Digital">
-        </div>
-
-        <div class="galeria-item">
-            <img src="./Obras/Dem/D1.png" alt="Obra 3" 
-                 data-title="Introspección" 
-                 data-info="Mirada interior hacia los estados de ansiedad latente." 
-                 data-year="2023" 
-                 data-technique="Acrílico sobre lienzo">
-        </div>
-
-        <!-- Obra destacada mediana -->
-        <div class="galeria-item galeria-item--md">
-            <img src="./Obras/Dem/D2.png" alt="Obra 4" 
-                 data-title="Ruido mental" 
-                 data-info="Saturación abstracta de pensamientos simultáneos." 
-                 data-year="2023" 
-                 data-technique="Digital">
-        </div>
-
-        <div class="galeria-item">
-            <img src="./Obras/Dem/D3.png" alt="Obra 5" 
-                 data-title="Soledad acompañada" 
-                 data-info="Contrastes entre vacío y presencia." 
-                 data-year="2024" 
-                 data-technique="Digital">
-        </div>
-
-        <div class="galeria-item">
-            <img src="./Obras/fumadorxs/C1.png" alt="Obra 6" 
-                 data-title="C:\Fumadorxs" 
-                 data-info="Lo figurativo se descompone en planos temporales." 
-                 data-year="2024" 
-                 data-technique="Digital">
-        </div>
-
-        <!-- Horizontal panorámica -->
-        <div class="galeria-item galeria-item--lg">
-            <img src="./Obras/deep.png" alt="Obra 7" 
-                 data-title="Pensamiento Profundo" 
-                 data-info="Lo figurativo se descompone en planos temporales." 
-                 data-year="2024" 
-                 data-technique="Digital">
-        </div>
-
-        <!-- Otra destacada mediana -->
-        <div class="galeria-item galeria-item--md">
-            <img src="./Obras/img_ira.png" alt="Obra 8" 
-                 data-title="Estudio sobre la ira" 
-                 data-info="Lo figurativo se descompone en planos temporales." 
-                 data-year="2024" 
-                 data-technique="Acrílico sobre lienzo">
-        </div>
-
-        <div class="galeria-item">
-            <img src="./Obras/P1.png" alt="Obra 9" 
-                 data-title="Estudio de iluminación." 
-                 data-info="Lo figurativo se descompone en planos temporales." 
-                 data-year="2024" 
-                 data-technique="Digital">
-        </div>
-
-        <div class="galeria-item galeria-item--lg">
-            <img src="./Obras/port.png" alt="Obra 10" 
-                 data-title="Fragmentos" 
-                 data-info="Lo figurativo se descompone en planos temporales." 
-                 data-year="2026" 
-                 data-technique="Digital">
-        </div>
-
-        <div class="galeria-item galeria-item--md">
-            <img src="./Obras/Intensional.png" alt="Obra 11" 
-                 data-title="Intensional" 
-                 data-info="Lo figurativo se descompone en planos temporales." 
-                 data-year="2026" 
-                 data-technique="Digital">
-        </div>
-
-    </div>
-</section>
-
-    <!-- VISOR DE OBRA CON INFORMACIÓN -->
+    <!-- VISOR DE OBRA -->
     <div id="obraViewer" class="obra-viewer">
         <div class="obra-viewer-overlay" onclick="closeObraViewer()"></div>
         <div class="obra-viewer-content">
-            <span class="close-btn" onclick="closeObraViewer()">✕</span>
+            <span class="close-btn" onclick="closeObraViewer()">[X]</span>
             <div class="obra-viewer-layout">
                 <div class="obra-imagen-container">
-                    <img id="obraImagen" src="" alt="Obra ampliada">
+                    <img id="obraImagen" src="" alt="Obra ampliada" decoding="async">
                 </div>
                 <div class="obra-info">
                     <h3 id="obraTitulo" class="obra-titulo"></h3>
                     <div class="obra-meta">
-                        <p><span class="meta-label">Año</span> <span id="obraYear"></span></p>
-                        <p><span class="meta-label">Técnica</span> <span id="obraTechnique"></span></p>
+                        <p><span class="meta-label">Año:</span> <span id="obraYear"></span></p>
+                        <p><span class="meta-label">Técnica:</span> <span id="obraTechnique"></span></p>
                     </div>
                     <p id="obraDescripcion" class="obra-descripcion"></p>
                 </div>
@@ -176,10 +142,10 @@
         </div>
     </div>
 
-    <!-- Visor fullscreen (para el portrait o cualquier otra imagen) -->
+    <!-- Visor fullscreen -->
     <div id="fullScreenContainer" onclick="closeFullScreen()">
-        <span class="close-btn">✕</span>
-        <img id="fullScreenImage" src="" alt="Previsualización en Pantalla Completa">
+        <span class="close-btn">[X]</span>
+        <img id="fullScreenImage" src="" alt="Previsualización en Pantalla Completa" decoding="async">
     </div>
 
     <footer>
@@ -188,5 +154,24 @@
             <p class="footertext footer-author">— José Saramago, El hombre duplicado</p>
         </div>
     </footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VisualArtwork",
+  "name": "ANNICHILARE",
+  "image": "https://annichilare.github.io/Obras/10seg/1.png",
+  "description": "Exploración de estados mentales de forma figurativa.",
+  "artist": {
+    "@type": "Person",
+    "name": "Rasec Depablos",
+    "url": "https://annichilare.github.io/"
+  },
+  "dateCreated": "2025",
+  "artMedium": "Digital",
+  "artform": "Arte digital",
+  "genre": "Figurativo abstracto"
+}
+</script>
+
 </body>
 </html>
